@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/rafaelgonzalez/locobot.svg?branch=master)](https://travis-ci.org/rafaelgonzalez/locobot)
+[![Dependency Status](https://gemnasium.com/rafaelgonzalez/locobot.svg)](https://gemnasium.com/rafaelgonzalez/locobot)
+[![Test Coverage](https://codeclimate.com/github/rafaelgonzalez/locobot/badges/coverage.svg)](https://codeclimate.com/github/rafaelgonzalez/locobot)
+[![Code Climate](https://codeclimate.com/github/rafaelgonzalez/locobot/badges/gpa.svg)](https://codeclimate.com/github/rafaelgonzalez/locobot)
+
 # Locobot
 
 TODO: Write a gem description
