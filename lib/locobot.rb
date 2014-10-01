@@ -1,5 +1,5 @@
-require 'locobot/version'
+require 'loco_bot/version'
 
-module Locobot
+module LocoBot
   # Your code goes here...
 end
