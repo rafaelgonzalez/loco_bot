@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Locobot::VERSION
   spec.authors       = ['Rafaël Gonzalez']
   spec.email         = ['rafaelgonzalez@users.noreply.github.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ''
+  spec.summary       = %q{Ruby gem of a crazy robot and a benevolent table that keeps watching over it.}
+  spec.description   = %q{Issue commands to control the robot. The table will keep you from making it fall, you monster!}
+  spec.homepage      = 'https://github.com/rafaelgonzalez/locobot'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
