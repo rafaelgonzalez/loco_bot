@@ -23,10 +23,18 @@ module LocoBot
       true
     end
 
-    def turn(turn_direction)
+    def turn_left
       return false if table.nil?
 
-      @direction = Direction.from_turn_direction(direction, turn_direction)
+      @direction = direction.left
+
+      true
+    end
+
+    def turn_right
+      return false if table.nil?
+
+      @direction = direction.right
 
       true
     end
@@ -38,17 +46,7 @@ module LocoBot
     end
 
     def next_position
-      if [Direction::North, Direction::South].include?(direction)
-        {
-          x: x,
-          y: y + Direction.numeric(direction)
-        }
-      elsif [Direction::East, Direction::West].include?(direction)
-        {
-          x: x + Direction.numeric(direction),
-          y: y
-        }
-      end
+      direction.coordinates(x, y)
     end
   end
 end
