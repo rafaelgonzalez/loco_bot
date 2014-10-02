@@ -38,12 +38,12 @@ module LocoBot
     end
 
     def next_position
-      if [Direction::NORTH, Direction::SOUTH].include?(direction)
+      if [Direction::North, Direction::South].include?(direction)
         {
           x: x,
           y: y + Direction.numeric(direction)
         }
-      elsif [Direction::EAST, Direction::WEST].include?(direction)
+      elsif [Direction::East, Direction::West].include?(direction)
         {
           x: x + Direction.numeric(direction),
           y: y

@@ -6,9 +6,9 @@ RSpec.describe LocoBot::Robot do
     subject { robot }
 
     it 'calls Table#place_robot' do
-      expect(table).to receive(:place_robot).with(subject, 9, 3, LocoBot::Robot::Direction::EAST).once
+      expect(table).to receive(:place_robot).with(subject, 9, 3, LocoBot::Robot::Direction::East).once
 
-      subject.place(table, 9, 3, LocoBot::Robot::Direction::EAST)
+      subject.place(table, 9, 3, LocoBot::Robot::Direction::East)
     end
   end
 
@@ -16,7 +16,7 @@ RSpec.describe LocoBot::Robot do
     subject { robot.remove }
 
     context 'when placed on a table' do
-      before { robot.place(table, 6, 17, LocoBot::Robot::Direction::EAST)  }
+      before { robot.place(table, 6, 17, LocoBot::Robot::Direction::East)  }
 
       it 'calls Table#remove_robot' do
         expect(table).to receive(:remove_robot).with(robot).once
@@ -36,7 +36,7 @@ RSpec.describe LocoBot::Robot do
     before { robot.place(table, x, y, direction) }
 
     context 'facing north' do
-      let(:direction) { LocoBot::Robot::Direction::NORTH }
+      let(:direction) { LocoBot::Robot::Direction::North }
       let(:x) { 10 }
 
       context 'when movement is possible' do
@@ -59,7 +59,7 @@ RSpec.describe LocoBot::Robot do
     end
 
     context 'facing south' do
-      let(:direction) { LocoBot::Robot::Direction::SOUTH }
+      let(:direction) { LocoBot::Robot::Direction::South }
       let(:x) { 10 }
 
       context 'when movement is possible' do
@@ -82,7 +82,7 @@ RSpec.describe LocoBot::Robot do
     end
 
     context 'facing east' do
-      let(:direction) { LocoBot::Robot::Direction::EAST }
+      let(:direction) { LocoBot::Robot::Direction::East }
       let(:y) { 10 }
 
       context 'when movement is possible' do
@@ -105,7 +105,7 @@ RSpec.describe LocoBot::Robot do
     end
 
     context 'facing west' do
-      let(:direction) { LocoBot::Robot::Direction::WEST }
+      let(:direction) { LocoBot::Robot::Direction::West }
       let(:y) { 10 }
 
       context 'when movement is possible' do
@@ -134,50 +134,50 @@ RSpec.describe LocoBot::Robot do
     before { subject.place(table, 10, 10, direction) }
 
     context 'facing north' do
-      let(:direction) { LocoBot::Robot::Direction::NORTH }
+      let(:direction) { LocoBot::Robot::Direction::North }
 
       context 'turning right' do
-        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::EAST }
+        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::East }
       end
 
       context 'turning left' do
-        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::WEST }
+        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::West }
       end
     end
 
     context 'facing south' do
-      let(:direction) { LocoBot::Robot::Direction::SOUTH }
+      let(:direction) { LocoBot::Robot::Direction::South }
 
       context 'turning right' do
-        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::WEST }
+        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::West }
       end
 
       context 'turning left' do
-        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::EAST }
+        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::East }
       end
     end
 
     context 'facing east' do
-      let(:direction) { LocoBot::Robot::Direction::EAST }
+      let(:direction) { LocoBot::Robot::Direction::East }
 
       context 'turning right' do
-        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::SOUTH }
+        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::South }
       end
 
       context 'turning left' do
-        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::NORTH }
+        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::North }
       end
     end
 
     context 'facing west' do
-      let(:direction) { LocoBot::Robot::Direction::WEST }
+      let(:direction) { LocoBot::Robot::Direction::West }
 
       context 'turning right' do
-        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::NORTH }
+        it { expect { subject.turn(:right) }.to change { subject.direction }.to LocoBot::Robot::Direction::North }
       end
 
       context 'turning left' do
-        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::SOUTH }
+        it { expect { subject.turn(:left) }.to change { subject.direction }.to LocoBot::Robot::Direction::South }
       end
     end
   end
@@ -186,9 +186,9 @@ RSpec.describe LocoBot::Robot do
     subject { robot.report }
 
     context 'when placed on a table' do
-      before { robot.place(table, 6, 17, LocoBot::Robot::Direction::EAST)  }
+      before { robot.place(table, 6, 17, LocoBot::Robot::Direction::East)  }
 
-      it { is_expected.to eql({x: 6, y: 17, direction: LocoBot::Robot::Direction::EAST}) }
+      it { is_expected.to eql({x: 6, y: 17, direction: LocoBot::Robot::Direction::East}) }
     end
 
     context 'when not placed on a table' do
@@ -205,25 +205,25 @@ RSpec.describe LocoBot::Robot do
     before { robot.place(table, 10, 10, direction) }
 
     context 'facing north' do
-      let(:direction) { LocoBot::Robot::Direction::NORTH }
+      let(:direction) { LocoBot::Robot::Direction::North }
 
       it { is_expected.to eql({x: 10, y: 11}) }
     end
 
     context 'facing south' do
-      let(:direction) { LocoBot::Robot::Direction::SOUTH }
+      let(:direction) { LocoBot::Robot::Direction::South }
 
       it { is_expected.to eql({x: 10, y: 9}) }
     end
 
     context 'facing east' do
-      let(:direction) { LocoBot::Robot::Direction::EAST }
+      let(:direction) { LocoBot::Robot::Direction::East }
 
       it { is_expected.to eql({x: 11, y: 10}) }
     end
 
     context 'facing west' do
-      let(:direction) { LocoBot::Robot::Direction::WEST }
+      let(:direction) { LocoBot::Robot::Direction::West }
 
       it { is_expected.to eql({x: 9, y: 10}) }
     end
