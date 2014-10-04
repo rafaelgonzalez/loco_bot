@@ -1,0 +1,4 @@
+PLACE 0,0,NORTH
+LEFT
+REPORT
+# outputs '0,0,WEST'
