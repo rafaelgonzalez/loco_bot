@@ -1,12 +1,29 @@
 module LocoBot
+  # Provides a 'command line'-like interface to interact with the API,
+  # in a limited way: only one Robot and Table instances are available.
   class CLI
-    attr_reader :robot, :table
+
+    # @!attribute [r] table
+    # @return [Robot] the Robot
+    attr_reader :robot
+
+    # @!attribute [r] table
+    # @return [Table] the Table
+    attr_reader :table
 
     def initialize
       @robot = Robot.new
       @table = Table.new
     end
 
+    # Reads input of commands.
+    # @param input [String] the input
+    # @note Available commands are:
+    #   - PLACE X,Y,F: put the robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
+    #   - MOVE: move the robot one unit forward in the direction it is currently facing.
+    #   - LEFT and RIGHT rotate the robot 90 degrees in the specified direction without changing its position.
+    #   - REPORT  announces the X,Y and F of the robot.
+    # @return [void]
     def input!(input)
       begin
         instance_eval(input.downcase)
