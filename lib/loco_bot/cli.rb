@@ -8,7 +8,11 @@ module LocoBot
     end
 
     def input!(input)
-      instance_eval(input.downcase)
+      begin
+        instance_eval(input.downcase)
+      rescue ArgumentError
+      rescue NameError
+      end
     end
 
     private
