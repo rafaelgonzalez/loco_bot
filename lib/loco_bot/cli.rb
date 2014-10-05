@@ -22,7 +22,8 @@ module LocoBot
     #   - PLACE X,Y,F: put the robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
     #   - MOVE: move the robot one unit forward in the direction it is currently facing.
     #   - LEFT and RIGHT rotate the robot 90 degrees in the specified direction without changing its position.
-    #   - REPORT  announces the X,Y and F of the robot.
+    #   - REPORT announces the X,Y and F of the robot.
+    #   - HODOR outputs a friendly greating of the world biggest simpleton.
     # @return [void]
     def input!(input)
       begin
@@ -56,6 +57,10 @@ module LocoBot
       unless report.empty?
         puts "#{report[:x]},#{report[:y]},#{report[:direction].label}"
       end
+    end
+
+    def hodor
+      puts 'HODOR HODOR !'
     end
 
     def north

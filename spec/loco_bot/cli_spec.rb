@@ -131,6 +131,26 @@ RSpec.describe LocoBot::CLI do
       end
     end
 
+    context 'using HODOR command' do
+      let(:command) { :hodor }
+
+      context 'with an invalid number of arguments' do
+        let(:arguments) { '1, 3' }
+
+        it 'does not output a string' do
+          expect { subject.input!(input) }.not_to output.to_stdout
+        end
+      end
+
+      context 'with a valid number of arguments' do
+        let(:arguments) { '' }
+
+        it 'outputs a string' do
+          expect { subject.input!(input) }.to output("HODOR HODOR !\n").to_stdout
+        end
+      end
+    end
+
     context 'using an invalid command' do
       let(:command) { :yadayada }
       let(:arguments) { '' }
