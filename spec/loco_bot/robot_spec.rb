@@ -208,30 +208,36 @@ RSpec.describe LocoBot::Robot do
   describe '#next_position' do
     subject { robot.next_position }
 
-    before { robot.place(table, 10, 10, direction) }
-
-    context 'facing north' do
-      let(:direction) { LocoBot::Robot::Direction::North }
-
-      it { is_expected.to eql({x: 10, y: 11}) }
+    context 'when not placed on a table' do
+      it { is_expected.to eql({}) }
     end
 
-    context 'facing south' do
-      let(:direction) { LocoBot::Robot::Direction::South }
+    context 'when placed on a table' do
+      before { robot.place(table, 10, 10, direction) }
 
-      it { is_expected.to eql({x: 10, y: 9}) }
-    end
+      context 'facing north' do
+        let(:direction) { LocoBot::Robot::Direction::North }
 
-    context 'facing east' do
-      let(:direction) { LocoBot::Robot::Direction::East }
+        it { is_expected.to eql({x: 10, y: 11}) }
+      end
 
-      it { is_expected.to eql({x: 11, y: 10}) }
-    end
+      context 'facing south' do
+        let(:direction) { LocoBot::Robot::Direction::South }
 
-    context 'facing west' do
-      let(:direction) { LocoBot::Robot::Direction::West }
+        it { is_expected.to eql({x: 10, y: 9}) }
+      end
 
-      it { is_expected.to eql({x: 9, y: 10}) }
+      context 'facing east' do
+        let(:direction) { LocoBot::Robot::Direction::East }
+
+        it { is_expected.to eql({x: 11, y: 10}) }
+      end
+
+      context 'facing west' do
+        let(:direction) { LocoBot::Robot::Direction::West }
+
+        it { is_expected.to eql({x: 9, y: 10}) }
+      end
     end
   end
 end

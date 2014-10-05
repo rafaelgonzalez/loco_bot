@@ -88,6 +88,8 @@ module LocoBot
     #   robot.place(1, 2, Direction::West)
     #   robot.next_direction # => {x: 0, y: 2}
     def next_position
+      return {} if table.nil?
+
       direction.coordinates(x, y)
     end
   end

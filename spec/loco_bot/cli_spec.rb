@@ -110,6 +110,12 @@ RSpec.describe LocoBot::CLI do
 
       context 'with an invalid number of arguments' do
         let(:arguments) { '1, 3' }
+
+        it 'does not call Robot#report' do
+          expect(subject.robot).not_to receive(:report)
+
+          subject.input!(input)
+        end
       end
 
       context 'with a valid number of arguments' do
