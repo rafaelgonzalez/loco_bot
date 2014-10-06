@@ -44,7 +44,7 @@ To use multiple robots and tables, see the API usage further below.
 
 Just run the binary and start typing commands:
 
-    $ robot_cli
+    $ loco_bot_cli
 
 Available commands are:
 
@@ -70,7 +70,7 @@ Available commands are:
 
 Example:
 
-    $ robot_cli
+    $ loco_bot_cli
     PLACE 1,2,SOUTH
     MOVE
     LEFT
@@ -83,7 +83,7 @@ Example:
 
 You can also use files to issue commands, like so:
 
-    $ robot_cli < ./spec/support/test_1.txt
+    $ loco_bot_cli < ./spec/support/test_1.txt
 
 ### API
 
