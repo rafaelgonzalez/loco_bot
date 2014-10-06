@@ -5,6 +5,10 @@ RSpec.describe LocoBot::CLI::Command::Hodor do
   subject { described_class.new(robot, table) }
 
   describe '#execute' do
-    it { expect { subject.execute }.to output("HODOR HODOR !\n").to_stdout }
+    it 'calls #hodor! on robot' do
+      expect(subject.robot).to receive(:hodor!).with(no_args).once
+
+      subject.execute
+    end
   end
 end

@@ -27,7 +27,7 @@ module LocoBot
     #   - MOVE: move the robot one unit forward in the direction it is currently facing.
     #   - LEFT and RIGHT rotate the robot 90 degrees in the specified direction without changing its position.
     #   - REPORT announces the X,Y and F of the robot.
-    #   - HODOR outputs a friendly greating from the world biggest (literally, not figuratively) simpleton.
+    #   - HODOR outputs a friendly greating.
     # @return [void]
     def input!(input)
       parsed_data = parse_input(input)
