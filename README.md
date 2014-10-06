@@ -7,7 +7,11 @@
 
 Ruby gem of crazy robots and benevolent tables that keep watching over them.
 
-Issue commands to control the robots and the tables will keep you from making them fall, you monster!
+Issue commands to control the robots and the tables will keep you from making them fall.
+
+> You monster!
+
+> *- GLadOS*
 
 ## Rules
 
