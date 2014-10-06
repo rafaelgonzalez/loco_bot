@@ -13,6 +13,12 @@ module LocoBot
       def self.list
         constants.map(&:to_s)
       end
+
+      def self.from_name(name)
+        if const_defined?(name.capitalize, false)
+          const_get(name.capitalize)
+        end
+      end
     end
   end
 end
