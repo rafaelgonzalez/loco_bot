@@ -4,4 +4,3 @@ MOVE
 LEFT
 MOVE
 REPORT
-# outputs: 3,3,NORTH

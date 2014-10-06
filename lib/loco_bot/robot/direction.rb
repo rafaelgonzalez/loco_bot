@@ -13,6 +13,15 @@ module LocoBot
       def self.list
         constants.map(&:to_s)
       end
+
+      # Returns a Direction class that as the same name as the given name.
+      # @param name [String] the Direction name
+      # @return [Command] the Direction
+      def self.from_name(name)
+        if const_defined?(name.capitalize, false)
+          const_get(name.capitalize)
+        end
+      end
     end
   end
 end
