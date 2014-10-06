@@ -205,6 +205,10 @@ RSpec.describe LocoBot::Robot do
     end
   end
 
+  describe '#hodor!' do
+    it { expect { robot.hodor! }.to output("HODOR HODOR !\n").to_stdout }
+  end
+
   describe '#next_position' do
     subject { robot.next_position }
 

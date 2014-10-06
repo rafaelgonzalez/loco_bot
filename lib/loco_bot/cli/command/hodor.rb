@@ -6,7 +6,7 @@ module LocoBot
         # Executes the command.
         # @return [void]
         def execute
-          puts 'HODOR HODOR !'
+          robot.hodor!
         end
       end
     end

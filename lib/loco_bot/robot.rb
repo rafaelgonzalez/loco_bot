@@ -81,6 +81,12 @@ module LocoBot
       {x: x, y: y, direction: direction}
     end
 
+    # Outputs a friendly greating.
+    # @return [void]
+    def hodor!
+      puts 'HODOR HODOR !'
+    end
+
     # Returns a Hash containing the next x and y coordinates of the Robot if it moves facing its current direction.
     # The Hash will be empty if the Robot has not been placed.
     # @return [Hash] the next x and y coordinates of the Robot.
