@@ -4,6 +4,7 @@ module LocoBot
   # Provides a 'command line'-like interface to interact with the API,
   # in a limited way: only one Robot and Table instances are available.
   class CLI
+    # The regexp used to parse input.
     INPUT_SPLIT_REGEXP = / |,|\s/
 
     # @!attribute [r] table

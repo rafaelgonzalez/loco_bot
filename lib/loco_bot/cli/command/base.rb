@@ -1,6 +1,7 @@
 module LocoBot
   class CLI
     module Command
+      # Parent class for Command classes.
       class Base
 
         # @!attribute [r] table
@@ -16,6 +17,8 @@ module LocoBot
           @table = table
         end
 
+        # Returns the Command's label.
+        # @return [String] the Command's label
         def self.label
           self.name.split("::").last.upcase
         end
