@@ -31,7 +31,7 @@ module LocoBot
       table.place_robot(self, x, y, direction)
     end
 
-    # Removes the Robot its current Table. Position attributes of the Robot are set to nil.
+    # Removes the Robot from its current Table. Position attributes of the Robot are set to nil.
     # @return [Boolean] true if removing was successful, false otherwise.
     def remove
       return false if table.nil?
@@ -92,7 +92,7 @@ module LocoBot
     # @return [Hash] the next x and y coordinates of the Robot.
     # @example
     #   robot.place(1, 2, Direction::West)
-    #   robot.next_direction # => {x: 0, y: 2}
+    #   robot.next_position # => {x: 0, y: 2}
     def next_position
       return {} if table.nil?
 
