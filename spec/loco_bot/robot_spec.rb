@@ -3,26 +3,104 @@ RSpec.describe LocoBot::Robot do
   let(:table) { LocoBot::Table.new(20, 20) }
 
   describe '#place' do
-    subject { robot }
+    let(:other_table) { LocoBot::Table.new(10, 10) }
+    let(:robot) { described_class.new }
 
-    it 'calls Table#place_robot' do
-      expect(table).to receive(:place_robot).with(subject, 9, 3, LocoBot::Robot::Direction::East).once
+    before { robot.place(other_table, 5, 7, LocoBot::Robot::Direction::West) }
 
-      subject.place(table, 9, 3, LocoBot::Robot::Direction::East)
+    context 'with a valid position' do
+      it "modifies the table's robot list" do
+        expect(other_table.robots).to include(robot)
+        expect(table.robots).not_to include(robot)
+
+        robot.place(table, 12, 14, LocoBot::Robot::Direction::South)
+
+        expect(other_table.robots).not_to include(robot)
+        expect(table.robots).to include(robot)
+      end
+
+      it 'changes the robot table, x, y and position' do
+        expect(robot.table).to eql other_table
+        expect(robot.x).to eql 5
+        expect(robot.y).to eql 7
+        expect(robot.direction).to eql LocoBot::Robot::Direction::West
+
+        robot.place(table, 12, 14, LocoBot::Robot::Direction::South)
+
+        expect(robot.table).to eql table
+        expect(robot.x).to eql 12
+        expect(robot.y).to eql 14
+        expect(robot.direction).to eql LocoBot::Robot::Direction::South
+      end
+
+      it { expect(robot.place(table, 12, 14, LocoBot::Robot::Direction::South)).to be true }
+    end
+
+    context 'with an invalid position' do
+      it "does not modify the table's robot list" do
+        expect(other_table.robots).to include(robot)
+        expect(table.robots).not_to include(robot)
+
+        robot.place(table, 617, 9001, LocoBot::Robot::Direction::South)
+
+        expect(other_table.robots).to include(robot)
+        expect(table.robots).not_to include(robot)
+      end
+
+      it 'does not change the robot table, x, y and position' do
+        expect(robot.table).to eql other_table
+        expect(robot.x).to eql 5
+        expect(robot.y).to eql 7
+        expect(robot.direction).to eql LocoBot::Robot::Direction::West
+
+        robot.place(table, 617, 9001, LocoBot::Robot::Direction::South)
+
+        expect(robot.table).to eql other_table
+        expect(robot.x).to eql 5
+        expect(robot.y).to eql 7
+        expect(robot.direction).to eql LocoBot::Robot::Direction::West
+      end
+
+      it { expect(robot.place(table, 617, 9001, LocoBot::Robot::Direction::South)).to be false }
     end
   end
 
   describe '#remove' do
     subject { robot.remove }
 
+    before do
+      table.place_robot(LocoBot::Robot.new, 3, 4, LocoBot::Robot::Direction::North)
+      table.place_robot(LocoBot::Robot.new, 1, 8, LocoBot::Robot::Direction::West)
+    end
+
     context 'when placed on a table' do
       before { robot.place(table, 6, 17, LocoBot::Robot::Direction::East)  }
 
-      it 'calls Table#remove_robot' do
-        expect(table).to receive(:remove_robot).with(robot).once
+      it "removes the robot from the table's list" do
+        expect(table.robots.count).to eql 3
+        expect(table.robots).to include(robot)
 
-        subject
+        robot.remove
+
+        expect(table.robots.count).to eql 2
+        expect(table.robots).not_to include(robot)
       end
+
+      it 'sets to nil robot table, x, y and direction' do
+        expect(robot.table).to eql table
+        expect(robot.x).to eql 6
+        expect(robot.y).to eql 17
+        expect(robot.direction).to eql LocoBot::Robot::Direction::East
+
+        robot.remove
+
+        expect(robot.table).to be_nil
+        expect(robot.x).to be_nil
+        expect(robot.y).to be_nil
+        expect(robot.direction).to be_nil
+      end
+
+      it { expect(subject).to be true }
     end
 
     context 'when not placed on a table' do
