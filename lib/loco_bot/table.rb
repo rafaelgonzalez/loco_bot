@@ -12,11 +12,6 @@ module LocoBot
     # Determines the farthest accessible point on the Table's y-axis.
     attr_reader :height
 
-    # @!attribute [r] robots
-    # @return [Array<Robot>] a collection of [Robot]
-    # The collection of Robots currently placed on the Table.
-    attr_reader :robots
-
     # @param width [Integer] The width of the Table
     # @param height [Integer] The height of the Table
     def initialize(width = 5, height = 5)
@@ -37,28 +32,28 @@ module LocoBot
     def place_robot(robot, x, y, direction)
       return false unless position_valid?(x, y)
 
-      robot.table.remove_robot(robot) if robot.table
+      robot.remove if robot.table
 
-      robot.table = self
-      robot.direction = direction
-      robot.x = x
-      robot.y = y
+      robot.instance_variable_set(:@table, self)
+      robot.instance_variable_set(:@x, x)
+      robot.instance_variable_set(:@y, y)
+      robot.instance_variable_set(:@direction, direction)
 
       @robots.push(robot) unless robots.include?(robot)
 
       true
     end
 
-    # Removes the given Robot from the Table. Position attributes of the Robot are set to nil
+    # Removes the given Robot from the Table. Position attributes of the Robot are set to nil.
     # @param robot [Robot] the Robot to remove from the Table
     # @return [Boolean] true if removing was successful, false otherwise.
     def remove_robot(robot)
       return false unless robots.include?(robot)
 
-      robot.table = nil
-      robot.x = nil
-      robot.y = nil
-      robot.direction = nil
+      robot.instance_variable_set(:@table, nil)
+      robot.instance_variable_set(:@x, nil)
+      robot.instance_variable_set(:@y, nil)
+      robot.instance_variable_set(:@direction, nil)
 
       @robots.delete(robot)
 
@@ -71,6 +66,12 @@ module LocoBot
     # @return [Boolean] true if a Robot can be placed at the given coordinates, false otherwise.
     def position_valid?(x, y)
       position_within_bounds?(x, y) and position_free?(x, y)
+    end
+
+    # The collection of Robots currently placed on the Table.
+    # @return [Array<Robot>] a collection of [Robot]
+    def robots
+      @robots.dup
     end
 
     private
