@@ -37,28 +37,28 @@ module LocoBot
     def place_robot(robot, x, y, direction)
       return false unless position_valid?(x, y)
 
-      robot.table.remove_robot(robot) if robot.table
+      robot.remove if robot.table
 
-      robot.table = self
-      robot.direction = direction
-      robot.x = x
-      robot.y = y
+      robot.instance_variable_set(:@table, self)
+      robot.instance_variable_set(:@x, x)
+      robot.instance_variable_set(:@y, y)
+      robot.instance_variable_set(:@direction, direction)
 
       @robots.push(robot) unless robots.include?(robot)
 
       true
     end
 
-    # Removes the given Robot from the Table. Position attributes of the Robot are set to nil
+    # Removes the given Robot from the Table. Position attributes of the Robot are set to nil.
     # @param robot [Robot] the Robot to remove from the Table
     # @return [Boolean] true if removing was successful, false otherwise.
     def remove_robot(robot)
       return false unless robots.include?(robot)
 
-      robot.table = nil
-      robot.x = nil
-      robot.y = nil
-      robot.direction = nil
+      robot.instance_variable_set(:@table, nil)
+      robot.instance_variable_set(:@x, nil)
+      robot.instance_variable_set(:@y, nil)
+      robot.instance_variable_set(:@direction, nil)
 
       @robots.delete(robot)
 
