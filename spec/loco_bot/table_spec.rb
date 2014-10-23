@@ -36,7 +36,7 @@ RSpec.describe LocoBot::Table do
     before { other_table.place_robot(robot, 5, 7, LocoBot::Robot::Direction::West) }
 
     context 'with a valid position' do
-      it 'modifies the robot lists' do
+      it 'modifies the robot list' do
         expect(other_table.robots).to include(robot)
         expect(table.robots).not_to include(robot)
 
@@ -64,7 +64,7 @@ RSpec.describe LocoBot::Table do
     end
 
     context 'with an invalid position' do
-      it 'does not modify the robot lists' do
+      it 'does not modify the robot list' do
         expect(other_table.robots).to include(robot)
         expect(table.robots).not_to include(robot)
 

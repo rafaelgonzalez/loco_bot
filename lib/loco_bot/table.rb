@@ -69,7 +69,7 @@ module LocoBot
     end
 
     # The collection of Robots currently placed on the Table.
-    # @return [Array<Robot>] a collection of [Robot]
+    # @return [Array<Robot>] a collection of Robots
     def robots
       @robots.dup
     end
