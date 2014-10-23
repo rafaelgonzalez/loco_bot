@@ -4,21 +4,21 @@ module LocoBot
   # Representation of a robot, placeable on tables.
   class Robot
 
-    # @!attribute [rw] table
+    # @!attribute [r] table
     # @return [Table] the Table the Robot is currently placed on
-    attr_accessor :table
+    attr_reader :table
 
-    # @!attribute [rw] x
+    # @!attribute [r] x
     # @return [Integer] the x-axis coordinate the Robot is currently at on the Table
-    attr_accessor :x
+    attr_reader :x
 
-    # @!attribute [rw] y
+    # @!attribute [r] y
     # @return [Integer] the y-axis coordinate the Robot is currently at on the Table
-    attr_accessor :y
+    attr_reader :y
 
-    # @!attribute [rw] direction
+    # @!attribute [r] direction
     # @return [Direction] the Direction the Robot is currently facing on the Table
-    attr_accessor :direction
+    attr_reader :direction
 
     # Places the Robot on the given Table at the given coordinates, facing the given Direction.
     # If the Robot was previously on another Table, it is removed from it before being placed on the given.
