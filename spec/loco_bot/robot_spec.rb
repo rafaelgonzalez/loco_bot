@@ -322,4 +322,29 @@ RSpec.describe LocoBot::Robot do
       end
     end
   end
+
+  describe '#next_position_valid?' do
+    subject { robot.next_position_valid? }
+
+    context 'when not placed on a table' do
+      it { is_expected.to be false }
+    end
+
+
+    context 'when placed on a table' do
+      before { robot.place(table, 0, 0, direction) }
+
+      context 'facing a invalid position' do
+        let(:direction) { LocoBot::Robot::Direction::West }
+
+        it { is_expected.to be false }
+      end
+
+      context 'facing a valid position' do
+        let(:direction) { LocoBot::Robot::Direction::North }
+
+        it { is_expected.to be true }
+      end
+    end
+  end
 end

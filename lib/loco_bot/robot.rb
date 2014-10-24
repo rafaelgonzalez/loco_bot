@@ -42,7 +42,7 @@ module LocoBot
     # Moves the robot one unit forward in the direction it is currently facing.
     # @return [Boolean] true if moving was successful, false otherwise.
     def move
-      return false if table.nil? or !table.position_valid?(next_position[:x], next_position[:y])
+      return false unless next_position_valid?
 
       @x = next_position[:x]
       @y = next_position[:y]
@@ -97,6 +97,14 @@ module LocoBot
       return {} if table.nil?
 
       direction.coordinates(x, y)
+    end
+
+    # Determines if the next position position of the Robot is valid according to its Table.
+    # @return [Boolean] true if the position is valid, false otherwise.
+    def next_position_valid?
+      return false if table.nil?
+
+      table.position_valid?(next_position[:x], next_position[:y])
     end
   end
 end
