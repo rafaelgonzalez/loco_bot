@@ -96,7 +96,7 @@ module LocoBot
     def next_position
       return {} if table.nil?
 
-      direction.coordinates(x, y)
+      direction.vector(x, y)
     end
 
     # Determines if the next position position of the Robot is valid according to its Table.

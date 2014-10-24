@@ -22,13 +22,13 @@ module LocoBot
           'WEST'
         end
 
-        # Returns the given coordinates in a Hash, modified to reflect the Direction.
+        # The Direction is applied to the given coordinates and returns vectorial coordinates in a Hash.
         # @param x [Integer] the x-axis coordinate
         # @param y [Integer] the y-axis coordinate
-        # @return [Hash] the modified x and y coordinates
+        # @return [Hash] the vectorial x and y coordinates
         # @example
-        #   Direction::West.coordinates(1, 2) # => {x: 0, y: 2}
-        def self.coordinates(x, y)
+        #   Direction::West.vector(1, 2) # => {x: 0, y: 2}
+        def self.vector(x, y)
           { x: x - 1, y: y }
         end
       end

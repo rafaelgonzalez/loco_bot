@@ -17,8 +17,8 @@ RSpec.describe LocoBot::Robot::Direction::South do
     it { is_expected.to eql 'SOUTH' }
   end
 
-  describe '.coordinates' do
-    subject { described_class.coordinates(21, 17) }
+  describe '.vector' do
+    subject { described_class.vector(21, 17) }
 
     it { is_expected.to eql({ x: 21, y: 16 }) }
   end
