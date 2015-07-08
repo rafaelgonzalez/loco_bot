@@ -1,19 +1,44 @@
-[![Build Status](https://travis-ci.org/rafaelgonzalez/loco_bot.svg?branch=master)](https://travis-ci.org/rafaelgonzalez/loco_bot)
-[![Dependency Status](https://gemnasium.com/rafaelgonzalez/loco_bot.svg)](https://gemnasium.com/rafaelgonzalez/loco_bot)
-[![Test Coverage](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/coverage.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
-[![Code Climate](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/gpa.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
-
 # LocoBot
 
-Ruby gem of crazy robots and benevolent tables that keep watching over them.
+[![Current version](https://img.shields.io/gem/v/loco_bot.svg)](https://rubygems.org/gems/loco_bot)
+[![Build Status](https://img.shields.io/travis/rafaelgonzalez/loco_bot/master.svg)](https://travis-ci.org/rafaelgonzalez/loco_bot)
+[![Dependency Status](https://img.shields.io/gemnasium/rafaelgonzalez/loco_bot.svg)](https://gemnasium.com/rafaelgonzalez/loco_bot)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/rafaelgonzalez/loco_bot.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
+[![Code Climate](https://img.shields.io/codeclimate/github/rafaelgonzalez/loco_bot.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
+
+![Claptrap](./claptrap.png)
+
+*Image credits: [PrincessBloodyMary @ deviantart](http://princessbloodymary.deviantart.com/art/Claptrap-490237635)*
+
+---
+
+- [Description](#description)
+  - [What's this?](#whats-this)
+  - [Rules](#rules)
+- [Installation](#installation)
+- [Supported Ruby versions](#supported-ruby-versions)
+- [Usage](#usage)
+  - [Command line interface](#command-line-interface)
+    - [Manual input](#manual-input)
+    - [Input from files](#input-from-files)
+  - [API](#api)
+    - [LocoBot::Table](#locobottable)
+    - [LocoBot::Robot](#locobotrobot)
+    - [LocoBot::CLI](#locobotcli)
+- [License](#license)
+- [Contributing](#contributing)
+
+## Description
+
+### What's this?
+
+A ruby gem of crazy robots and benevolent tables that keep watching over them.
 
 Issue commands to control the robots and the tables will keep you from making them fall.
 
-> You monster!
+This is an implementation of the famous Toy Robot recruitment test.
 
-> *- GLadOS*
-
-## Rules
+### Rules
 
 - Robots can not move until placed on a table.
 - Robots are free to roam around the surface of the table, but will be prevented from
@@ -29,6 +54,12 @@ Via RubyGems:
 Or in a Gemfile:
 
     gem 'loco_bot'
+
+## Supported Ruby versions
+
+- MRI 2.2.0
+- MRI 2.1.0
+- MRI 2.0.0
 
 ## Usage
 
