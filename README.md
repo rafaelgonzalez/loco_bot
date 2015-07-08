@@ -13,7 +13,8 @@
 ---
 
 - [Description](#description)
-- [Rules](#rules)
+  - [What's this?](#whats-this)
+  - [Rules](#rules)
 - [Installation](#installation)
 - [Supported Ruby versions](#supported-ruby-versions)
 - [Usage](#usage)
@@ -29,15 +30,15 @@
 
 ## Description
 
+### What's this?
+
 A ruby gem of crazy robots and benevolent tables that keep watching over them.
 
 Issue commands to control the robots and the tables will keep you from making them fall.
 
-> You monster!
+This is an implementation of the famous Toy Robot recruitment test.
 
-> *- GLadOS*
-
-## Rules
+### Rules
 
 - Robots can not move until placed on a table.
 - Robots are free to roam around the surface of the table, but will be prevented from
