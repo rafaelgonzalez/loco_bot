@@ -1,9 +1,9 @@
 # LocoBot
 
-[![Build Status](https://travis-ci.org/rafaelgonzalez/loco_bot.svg?branch=master)](https://travis-ci.org/rafaelgonzalez/loco_bot)
-[![Dependency Status](https://gemnasium.com/rafaelgonzalez/loco_bot.svg)](https://gemnasium.com/rafaelgonzalez/loco_bot)
-[![Test Coverage](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/coverage.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
-[![Code Climate](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/gpa.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
+[![Build Status](https://img.shields.io/travis/rafaelgonzalez/loco_bot/master.svg)](https://travis-ci.org/rafaelgonzalez/loco_bot)
+[![Dependency Status](https://img.shields.io/gemnasium/rafaelgonzalez/loco_bot.svg)](https://gemnasium.com/rafaelgonzalez/loco_bot)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/rafaelgonzalez/loco_bot.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
+[![Code Climate](https://img.shields.io/codeclimate/github/rafaelgonzalez/loco_bot.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
 
 ![Claptrap](./claptrap.png)
 
