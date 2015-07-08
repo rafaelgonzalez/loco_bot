@@ -1,11 +1,17 @@
+# LocoBot
+
 [![Build Status](https://travis-ci.org/rafaelgonzalez/loco_bot.svg?branch=master)](https://travis-ci.org/rafaelgonzalez/loco_bot)
 [![Dependency Status](https://gemnasium.com/rafaelgonzalez/loco_bot.svg)](https://gemnasium.com/rafaelgonzalez/loco_bot)
 [![Test Coverage](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/coverage.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
 [![Code Climate](https://codeclimate.com/github/rafaelgonzalez/loco_bot/badges/gpa.svg)](https://codeclimate.com/github/rafaelgonzalez/loco_bot)
 
-# LocoBot
+![Claptrap](./claptrap.png)
 
-Ruby gem of crazy robots and benevolent tables that keep watching over them.
+*Image credits: [PrincessBloodyMary @ deviantart](http://princessbloodymary.deviantart.com/art/Claptrap-490237635)*
+
+---
+
+A ruby gem of crazy robots and benevolent tables that keep watching over them.
 
 Issue commands to control the robots and the tables will keep you from making them fall.
 
