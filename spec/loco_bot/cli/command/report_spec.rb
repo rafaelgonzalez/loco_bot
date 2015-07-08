@@ -12,7 +12,7 @@ RSpec.describe LocoBot::CLI::Command::Report do
     end
 
     context 'after placing robot' do
-      before { subject.robot.place(table, 4 ,2 , LocoBot::Robot::Direction::East) }
+      before { subject.robot.place(table, 4, 2, LocoBot::Robot::Direction::East) }
 
       it 'outputs a string' do
         expect { subject.execute }.to output("4,2,EAST\n").to_stdout

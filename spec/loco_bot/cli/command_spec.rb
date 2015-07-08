@@ -2,7 +2,7 @@ RSpec.describe LocoBot::CLI::Command do
   describe '.list' do
     subject { described_class.list }
 
-    it { is_expected.to eql ['HODOR', 'LEFT', 'MOVE', 'PLACE', 'REPORT', 'RIGHT'] }
+    it { is_expected.to eql %w(HODOR LEFT MOVE PLACE REPORT RIGHT) }
   end
 
   describe '.class_from_name' do

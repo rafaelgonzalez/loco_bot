@@ -2,7 +2,7 @@ RSpec.describe LocoBot::Robot::Direction do
   describe '.list' do
     subject { described_class.list }
 
-    it { is_expected.to eql ['East', 'North', 'South', 'West'] }
+    it { is_expected.to eql %w(East North South West) }
   end
 
   describe '.from_name' do
