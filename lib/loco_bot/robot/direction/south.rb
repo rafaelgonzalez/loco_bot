@@ -3,7 +3,6 @@ module LocoBot
     module Direction
       # South direction.
       module South
-
         # Returns the Direction at the left of this one.
         # @return [Direction::East]
         def self.left

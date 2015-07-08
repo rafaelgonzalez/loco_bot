@@ -3,7 +3,6 @@ require 'loco_bot/robot/direction'
 module LocoBot
   # Representation of a robot, placeable on tables.
   class Robot
-
     # @!attribute [r] table
     # @return [Table] the Table the Robot is currently placed on
     attr_reader :table
@@ -78,7 +77,7 @@ module LocoBot
     def report
       return {} if table.nil?
 
-      {x: x, y: y, direction: direction}
+      { x: x, y: y, direction: direction }
     end
 
     # Outputs a friendly greating.

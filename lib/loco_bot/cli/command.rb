@@ -10,11 +10,10 @@ module LocoBot
   class CLI
     # Top-level namespace for available commands.
     module Command
-
       # Returns the list of available commands.
       # @return [Array<String>] the list of available commands
       def self.list
-        list = constants.map {|const| const.to_s.upcase}
+        list = constants.map { |const| const.to_s.upcase }
         list.delete('BASE')
         list
       end
@@ -23,11 +22,9 @@ module LocoBot
       # @param name [String] the Command name
       # @return [Command] the Command
       def self.class_from_name(name)
-        return nil if name.nil? or name.capitalize.to_s == 'Base'
+        return nil if name.nil? || name.capitalize.to_s == 'Base'
 
-        if const_defined?(name.capitalize, false)
-          const_get(name.capitalize)
-        end
+        const_get(name.capitalize) if const_defined?(name.capitalize, false)
       end
     end
   end

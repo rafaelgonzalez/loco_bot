@@ -7,7 +7,6 @@ module LocoBot
   class Robot
     # Top-level namespace for the possible facing directions.
     module Direction
-
       # Returns the list of available Direction as Strings.
       # @return [Array<String>]
       def self.list
@@ -18,9 +17,7 @@ module LocoBot
       # @param name [String] the Direction name
       # @return [Command] the Direction
       def self.from_name(name)
-        if const_defined?(name.capitalize, false)
-          const_get(name.capitalize)
-        end
+        const_get(name.capitalize) if const_defined?(name.capitalize, false)
       end
     end
   end

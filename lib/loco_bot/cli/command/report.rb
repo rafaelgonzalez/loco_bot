@@ -6,11 +6,19 @@ module LocoBot
         # Executes the command.
         # @return [void]
         def execute
-          report = robot.report
+          report_hash = robot.report
 
-          unless report.empty?
-            puts "#{report[:x]},#{report[:y]},#{report[:direction].label}"
-          end
+          puts report_string(report_hash) unless report_hash.empty?
+        end
+
+        private
+
+        def report_string(report_hash)
+          [
+            report_hash[:x],
+            report_hash[:y],
+            report_hash[:direction].label
+          ].join(',')
         end
       end
     end

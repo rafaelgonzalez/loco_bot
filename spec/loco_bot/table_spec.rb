@@ -11,20 +11,20 @@ RSpec.describe LocoBot::Table do
     context 'with an invalid width' do
       let(:width) { 0 }
 
-      it { expect{ subject }.to(raise_error(ArgumentError)) }
+      it { expect { subject }.to(raise_error(ArgumentError)) }
     end
 
     context 'with an invalid height' do
       let(:height) { -5 }
 
-      it { expect{ subject }.to(raise_error(ArgumentError)) }
+      it { expect { subject }.to(raise_error(ArgumentError)) }
     end
 
     context 'with an invalid width and height' do
       let(:width) { -16 }
       let(:height) { 0 }
 
-      it { expect{ subject }.to(raise_error(ArgumentError)) }
+      it { expect { subject }.to(raise_error(ArgumentError)) }
     end
   end
 

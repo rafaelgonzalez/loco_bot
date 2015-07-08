@@ -46,11 +46,9 @@ module LocoBot
     private
 
     def execute_command(command_class, arguments)
-      begin
-        command_class.new(robot, table).execute(*arguments)
-      rescue ArgumentError => exception
-        puts "#{command_class.label}: #{exception.message}"
-      end
+      command_class.new(robot, table).execute(*arguments)
+    rescue ArgumentError => exception
+      puts "#{command_class.label}: #{exception.message}"
     end
 
     def parse_input(input)

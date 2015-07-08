@@ -17,9 +17,9 @@ RSpec.describe LocoBot::CLI do
         let(:command_class_double) { double }
 
         it 'calls the correct command' do
-          expect(LocoBot::CLI::Command::Place).to receive(:new).
-                                                  with(subject.robot, subject.table).
-                                                  once.and_return(command_class_double)
+          expect(LocoBot::CLI::Command::Place).to receive(:new)
+            .with(subject.robot, subject.table)
+            .once.and_return(command_class_double)
 
           expect(command_class_double).to receive(:execute).with('1', '3', 'SOUTH').once
 
@@ -41,7 +41,9 @@ RSpec.describe LocoBot::CLI do
       let(:arguments) { '' }
 
       it 'does not raise an error' do
-        expect { subject.input!(input) }.to output("YADAYADA: not a known command. Valid commands are HODOR, LEFT, MOVE, PLACE, REPORT, RIGHT.\n").to_stdout
+        expect { subject.input!(input) }.to output(
+          "YADAYADA: not a known command. Valid commands are HODOR, LEFT, MOVE, PLACE, REPORT, RIGHT.\n"
+        ).to_stdout
       end
     end
   end

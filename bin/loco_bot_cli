@@ -5,6 +5,6 @@ require 'loco_bot'
 
 cli = LocoBot::CLI.new
 
-while input = STDIN.gets
+while (input = STDIN.gets)
   cli.input!(input)
 end

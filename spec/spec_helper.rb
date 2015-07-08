@@ -3,7 +3,7 @@ CodeClimate::TestReporter.start
 
 require 'simplecov'
 SimpleCov.start do
-  add_filter "/spec/"
+  add_filter '/spec/'
 end
 
 require 'loco_bot'

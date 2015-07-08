@@ -1,7 +1,6 @@
 module LocoBot
   # Representation of a table on which robots can be placed.
   class Table
-
     # @!attribute [r] width
     # @return [Fixnum] width of the Table
     # Determines the farthest accessible point on the Table's x-axis.
@@ -65,7 +64,7 @@ module LocoBot
     # @param y [Integer] the y-axis coordinate
     # @return [Boolean] true if a Robot can be placed at the given coordinates, false otherwise.
     def position_valid?(x, y)
-      position_within_bounds?(x, y) and position_free?(x, y)
+      position_within_bounds?(x, y) && position_free?(x, y)
     end
 
     # The collection of Robots currently placed on the Table.
@@ -81,7 +80,7 @@ module LocoBot
     end
 
     def position_free?(x, y)
-      robots.none? {|robot| robot.x == x && robot.y == y }
+      robots.none? { |robot| robot.x == x && robot.y == y }
     end
 
     def validate_dimensions
@@ -89,7 +88,7 @@ module LocoBot
       errors << "#{width} is not a valid width: it must be > 0" unless width > 0
       errors << "#{height} is not a valid height: it must be > 0" unless height > 0
 
-      raise ArgumentError.new(errors.join(', ')) unless errors.empty?
+      fail(ArgumentError, errors.join(', ')) unless errors.empty?
     end
   end
 end

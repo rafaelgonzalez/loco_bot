@@ -272,7 +272,7 @@ RSpec.describe LocoBot::Robot do
     context 'when placed on a table' do
       before { robot.place(table, 6, 17, LocoBot::Robot::Direction::East)  }
 
-      it { is_expected.to eql({x: 6, y: 17, direction: LocoBot::Robot::Direction::East}) }
+      it { is_expected.to eql(x: 6, y: 17, direction: LocoBot::Robot::Direction::East) }
     end
 
     context 'when not placed on a table' do
@@ -300,25 +300,25 @@ RSpec.describe LocoBot::Robot do
       context 'facing north' do
         let(:direction) { LocoBot::Robot::Direction::North }
 
-        it { is_expected.to eql({x: 10, y: 11}) }
+        it { is_expected.to eql(x: 10, y: 11) }
       end
 
       context 'facing south' do
         let(:direction) { LocoBot::Robot::Direction::South }
 
-        it { is_expected.to eql({x: 10, y: 9}) }
+        it { is_expected.to eql(x: 10, y: 9) }
       end
 
       context 'facing east' do
         let(:direction) { LocoBot::Robot::Direction::East }
 
-        it { is_expected.to eql({x: 11, y: 10}) }
+        it { is_expected.to eql(x: 11, y: 10) }
       end
 
       context 'facing west' do
         let(:direction) { LocoBot::Robot::Direction::West }
 
-        it { is_expected.to eql({x: 9, y: 10}) }
+        it { is_expected.to eql(x: 9, y: 10) }
       end
     end
   end
@@ -329,7 +329,6 @@ RSpec.describe LocoBot::Robot do
     context 'when not placed on a table' do
       it { is_expected.to be false }
     end
-
 
     context 'when placed on a table' do
       before { robot.place(table, 0, 0, direction) }

@@ -20,6 +20,6 @@ RSpec.describe LocoBot::Robot::Direction::East do
   describe '.vector' do
     subject { described_class.vector(21, 17) }
 
-    it { is_expected.to eql({ x: 22, y: 17 }) }
+    it { is_expected.to eql(x: 22, y: 17) }
   end
 end
