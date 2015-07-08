@@ -12,6 +12,22 @@
 
 ---
 
+- [Description](#description)
+- [Rules](#rules)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Command line interface](#command-line-interface)
+    - [Manual input](#manual-input)
+    - [Input from files](#input-from-files)
+  - [API](#api)
+    - [LocoBot::Table](#locobottable)
+    - [LocoBot::Robot](#locobotrobot)
+    - [LocoBot::CLI](#locobotcli)
+- [License](#license)
+- [Contributing](#contributing)
+
+## Description
+
 A ruby gem of crazy robots and benevolent tables that keep watching over them.
 
 Issue commands to control the robots and the tables will keep you from making them fall.
