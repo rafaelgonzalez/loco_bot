@@ -15,6 +15,7 @@
 - [Description](#description)
 - [Rules](#rules)
 - [Installation](#installation)
+- [Supported Ruby versions](#supported-ruby-versions)
 - [Usage](#usage)
   - [Command line interface](#command-line-interface)
     - [Manual input](#manual-input)
@@ -52,6 +53,12 @@ Via RubyGems:
 Or in a Gemfile:
 
     gem 'loco_bot'
+
+## Supported Ruby versions
+
+- MRI 2.2.0
+- MRI 2.1.0
+- MRI 2.0.0
 
 ## Usage
 
