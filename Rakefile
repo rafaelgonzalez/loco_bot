@@ -1,16 +1,6 @@
 require 'bundler/gem_tasks'
-require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new('spec')
-
-begin
-  require 'rubocop/rake_task'
-  RuboCop::RakeTask.new do |task|
-    task.options = ['-D']
-  end
-rescue LoadError
-  warn 'Rubocop not found'
-end
+Dir['tasks/**/*.rake'].each { |ext| load ext } if defined?(Rake)
 
 task default: :test
 
